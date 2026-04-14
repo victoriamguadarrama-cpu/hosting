@@ -53,6 +53,6 @@ const AllVideos = () => {
 export default AllVideos
 
 export const loader = async () => {
-    const { data } = await axios.get("http://localhost:3000/videos");
+    const { data } = await axios.get("https://slackclonebackendapi.onrender.com//videos");
     return data;
 }

@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             path: "delete/:id",
             loader: async ({ params }) => {
               try {
-                await axios.delete("http://localhost:3000/videos/" + params.id);
+                await axios.delete("https://slackclonebackendapi.onrender.com//videos/" + params.id);
               } catch (e) {
                 console.log(e);
               }
@@ -96,7 +96,7 @@ const router = createBrowserRouter([
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(initializeData("http://localhost:3000/videos"));
+    dispatch(initializeData("https://slackclonebackendapi.onrender.com//videos"));
   }, [dispatch]);
 
   useYouTubeInit();

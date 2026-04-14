@@ -59,6 +59,6 @@ const ViewAll = () => {
 export default ViewAll
 
 export const loader = async () => {
-    const { data } = await axios.get("http://localhost:3000/playlists");
+    const { data } = await axios.get("https://slackclonebackendapi.onrender.com//playlists");
     return data
 }

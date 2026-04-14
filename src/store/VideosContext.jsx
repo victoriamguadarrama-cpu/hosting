@@ -21,7 +21,7 @@ export const VideosContext = createContext({
 
 export const VideosProvider = ({ children }) => {
     // Subscribe to our backend
-    const {data:videos,loading,error} = useBackendSync(`http://localhost:3000/videos`)
+    const {data:videos,loading,error} = useBackendSync(`https://slackclonebackendapi.onrender.com//videos`)
     // Track the current video
     const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 

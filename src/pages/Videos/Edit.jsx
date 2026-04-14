@@ -87,13 +87,13 @@ const wait = (ms) => new Promise(res => setTimeout(res, ms));
 
 const getData = async () => {
   await wait(5000);
-  const { data } = await axios.get("http://localhost:3000/playlists");
+  const { data } = await axios.get("https://slackclonebackendapi.onrender.com//playlists");
   return data;
 }
 
 export const loader = async ({ params }) => {
   const { id } = params;
-  const { data } = await axios.get(`http://localhost:3000/videos/${id}`);
+  const { data } = await axios.get(`https://slackclonebackendapi.onrender.com//videos/${id}`);
   const playlists = getData();
   return { data, playlists }
 }
@@ -107,7 +107,7 @@ export const action = async ({ params, request }) => {
 
   if (isValidUrl(youtubeUrl)) {
     try {
-      await axios.put("http://localhost:3000/videos/" + id, { id, title, youtubeUrl, playlistId })
+      await axios.put("https://slackclonebackendapi.onrender.com//videos/" + id, { id, title, youtubeUrl, playlistId })
       return redirect("/video");
     } catch (e) {
       return { code: 500, message: e }
